@@ -1,0 +1,20 @@
+service: catsPlease
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-west-2
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: true
+    packager: 'yarn'
+functions:
+  catsPlease:
+    handler: handler.sendCats
+    events:
+      - http:
+          path: cats
+          method: get
+plugins:
+- serverless-webpack
