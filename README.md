@@ -12,3 +12,6 @@ Serverless cats
 * Simple react page that makes a call to the serverless cat Lambda API.
 * A button to refresh the image.
 
+### Demo screenshot
+
+![CatsPlease](https://s3.amazonaws.com/cats-please/Screen+Shot+2019-01-21+at+8.39.25+PM.png)
