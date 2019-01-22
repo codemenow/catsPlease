@@ -9,6 +9,7 @@ export class Cat extends React.Component {
             isLoading: true,
             catImageUrl: ''
         }
+        this.getCatImage = this.getCatImage.bind(this);
     }
     async getCatImage() {
         try {
@@ -31,8 +32,12 @@ export class Cat extends React.Component {
     render(){
         return (
             <div>
-                {this.state.isLoading ? 
-                <div>Loading...</div> : <img src={this.state.catImageUrl}></img>}
+                {this.state.isLoading ? <div>Loading...</div> :
+                    <div> <img src={this.state.catImageUrl}></img>
+                    <div><button onClick={this.getCatImage}>Refresh</button></div>
+                    <div>Image Url: {this.state.catImageUrl}</div>
+                    <div>Images are taken from https://thecatapi.com/</div>
+                    </div>}
             </div>
         );
     }
